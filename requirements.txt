@@ -1,0 +1,11 @@
+langchain
+langchain-community
+langchainhub
+langchain-openai
+chromadb
+llama-index
+unstructured
+pypdf
+sentence-transformers
+ollama
+streamlit
