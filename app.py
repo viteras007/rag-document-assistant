@@ -1,8 +1,8 @@
 import streamlit as st
 from rag_chain import get_rag_chain
 
-st.set_page_config(page_title="RAG with HuggingFace + Ollama", layout="wide")
-st.title("💬 RAG with Hugging Face, LangChain, Ollama and Streamlit")
+st.set_page_config(page_title="RAG Doc Assistant", layout="wide")
+st.title("💬 Document RAG Assistant")
 
 query = st.text_input("Enter your question based on the documents:")
 
