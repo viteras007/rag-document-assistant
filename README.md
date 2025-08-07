@@ -1,108 +1,108 @@
 # RAG Document Assistant
 
-Um assistente de documentos baseado em RAG (Retrieval-Augmented Generation) construído com Streamlit, LangChain, HuggingFace e Ollama.
+A document assistant based on RAG (Retrieval-Augmented Generation) built with Streamlit, LangChain, HuggingFace and Ollama.
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-- **Interface Web**: Interface amigável construída com Streamlit
-- **RAG Pipeline**: Sistema de recuperação e geração de respostas
-- **Modelos Locais**: Usa Ollama para rodar modelos LLM localmente
-- **Embeddings**: Utiliza HuggingFace para embeddings de alta qualidade
-- **Base Vetorial**: ChromaDB para armazenamento e busca de documentos
+- **Web Interface**: User-friendly interface built with Streamlit
+- **RAG Pipeline**: Retrieval and response generation system
+- **Local Models**: Uses Ollama to run LLM models locally
+- **Embeddings**: Uses HuggingFace for high-quality embeddings
+- **Vector Database**: ChromaDB for document storage and search
 
-## 📋 Pré-requisitos
+## 📋 Prerequisites
 
 - Python 3.8+
-- Ollama instalado e rodando
-- Modelo Mistral baixado no Ollama
+- Ollama installed and running
+- Mistral model downloaded in Ollama
 
-## 🛠️ Instalação
+## 🛠️ Installation
 
-1. **Clone o repositório:**
+1. **Clone the repository:**
 ```bash
-git clone <seu-repositorio>
+git clone <your-repository>
 cd rag-document-assistant
 ```
 
-2. **Crie um ambiente virtual:**
+2. **Create a virtual environment:**
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# ou
+# or
 venv\Scripts\activate  # Windows
 ```
 
-3. **Instale as dependências:**
+3. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Configure o Ollama:**
+4. **Configure Ollama:**
 ```bash
-# Instale o Ollama (se ainda não tiver)
+# Install Ollama (if you don't have it yet)
 # https://ollama.ai/
 
-# Baixe o modelo Mistral
+# Download the Mistral model
 ollama pull mistral
 ```
 
-## 📚 Como usar
+## 📚 How to use
 
-1. **Prepare seus documentos:**
-   - Coloque seus PDFs na pasta `docs/`
+1. **Prepare your documents:**
+   - Place your PDFs in the `docs/` folder
 
-2. **Execute a ingestão:**
+2. **Run the ingestion:**
 ```bash
 python ingest.py
 ```
 
-3. **Inicie a aplicação:**
+3. **Start the application:**
 ```bash
 streamlit run app.py
 ```
 
-4. **Acesse a interface:**
-   - Abra http://localhost:8501 no seu navegador
+4. **Access the interface:**
+   - Open http://localhost:8501 in your browser
 
-## 🏗️ Arquitetura
+## 🏗️ Architecture
 
-- **`app.py`**: Interface Streamlit principal
-- **`rag_chain.py`**: Configuração da cadeia RAG
-- **`ingest.py`**: Script para processar documentos
-- **`requirements.txt`**: Dependências do projeto
+- **`app.py`**: Main Streamlit interface
+- **`rag_chain.py`**: RAG chain configuration
+- **`ingest.py`**: Document processing script
+- **`requirements.txt`**: Project dependencies
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 rag-document-assistant/
-├── app.py              # Interface Streamlit
-├── rag_chain.py        # Configuração RAG
-├── ingest.py           # Processamento de documentos
-├── requirements.txt    # Dependências
-├── .gitignore         # Arquivos ignorados pelo Git
-├── README.md          # Documentação
-├── docs/              # Documentos PDF (não versionado)
-├── db/                # Base vetorial (não versionado)
-└── venv/              # Ambiente virtual (não versionado)
+├── app.py              # Streamlit interface
+├── rag_chain.py        # RAG configuration
+├── ingest.py           # Document processing
+├── requirements.txt    # Dependencies
+├── .gitignore         # Git ignored files
+├── README.md          # Documentation
+├── docs/              # PDF documents (not versioned)
+├── db/                # Vector database (not versioned)
+└── venv/              # Virtual environment (not versioned)
 ```
 
-## 🔧 Tecnologias Utilizadas
+## 🔧 Technologies Used
 
-- **Streamlit**: Interface web
-- **LangChain**: Framework para LLMs
-- **HuggingFace**: Embeddings e modelos
-- **Ollama**: LLM local
-- **ChromaDB**: Base vetorial
-- **PyPDF**: Leitura de PDFs
+- **Streamlit**: Web interface
+- **LangChain**: LLM framework
+- **HuggingFace**: Embeddings and models
+- **Ollama**: Local LLM
+- **ChromaDB**: Vector database
+- **PyPDF**: PDF reading
 
-## 🤝 Contribuição
+## 🤝 Contributing
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+This project is under the MIT license. See the `LICENSE` file for more details.

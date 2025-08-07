@@ -6,7 +6,7 @@ from langchain.chains import RetrievalQA
 DB_PATH = "db/"
 
 def get_rag_chain():
-    print("🔄 Carregando base vetorial...")
+    print("🔄 Loading vector database...")
     vectorstore = Chroma(
         persist_directory=DB_PATH,
         embedding_function=HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
@@ -14,7 +14,7 @@ def get_rag_chain():
 
     retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
-    print("🤖 Carregando modelo LLM local via Ollama...")
+    print("🤖 Loading local LLM model via Ollama...")
     llm = Ollama(model="mistral")
 
     qa_chain = RetrievalQA.from_chain_type(

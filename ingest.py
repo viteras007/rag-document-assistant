@@ -4,7 +4,7 @@ from langchain_community.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 import os
 
-# Caminho dos PDFs
+# PDF files path
 DOCS_PATH = "docs/"
 DB_PATH = "db/"
 
@@ -17,20 +17,20 @@ def load_documents():
     return docs
 
 def ingest():
-    print("📄 Carregando documentos...")
+    print("📄 Loading documents...")
     docs = load_documents()
 
-    print("✂️ Dividindo textos...")
+    print("✂️ Splitting texts...")
     splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     chunks = splitter.split_documents(docs)
 
-    print("🧠 Criando embeddings com HuggingFace...")
+    print("🧠 Creating embeddings with HuggingFace...")
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-    print("📦 Salvando base vetorial com Chroma...")
+    print("📦 Saving vector database with Chroma...")
     Chroma.from_documents(documents=chunks, embedding=embeddings, persist_directory=DB_PATH)
 
-    print("✅ Ingestão concluída!")
+    print("✅ Ingestion completed!")
 
 if __name__ == "__main__":
     ingest()
