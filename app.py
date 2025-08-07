@@ -9,7 +9,7 @@ query = st.text_input("Enter your question based on the documents:")
 if query:
     chain = get_rag_chain()
     with st.spinner("Consulting..."):
-        result = chain(query)
+        result = chain.invoke(query)
 
     st.subheader("📚 Answer:")
     st.write(result["result"])

@@ -2,6 +2,9 @@ langchain
 langchain-community
 langchainhub
 langchain-openai
+langchain-huggingface
+langchain-chroma
+langchain-ollama
 chromadb
 llama-index
 unstructured

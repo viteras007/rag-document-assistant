@@ -1,6 +1,6 @@
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.llms import Ollama
+from langchain_chroma import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_ollama import OllamaLLM
 from langchain.chains import RetrievalQA
 
 DB_PATH = "db/"
@@ -15,7 +15,7 @@ def get_rag_chain():
     retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
     print("🤖 Loading local LLM model via Ollama...")
-    llm = Ollama(model="mistral")
+    llm = OllamaLLM(model="mistral")
 
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
